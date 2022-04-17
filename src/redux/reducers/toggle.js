@@ -1,5 +1,9 @@
-const initialState = {};
+const initialState = {
+  "me-dropdown": false,
+  "work-modal": false,
+};
 const toggleReducer = (state = initialState, action) => {
+  console.log(state, "before");
   switch (action.type) {
     case "SET_VISIBLE":
       return { ...state, [action.payload]: true };

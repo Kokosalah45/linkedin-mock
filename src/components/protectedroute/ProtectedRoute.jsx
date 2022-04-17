@@ -3,7 +3,7 @@ import { Outlet, Navigate } from "react-router-dom";
 const ProtectedRoute = ({
   isProtectedByAuth = true,
   allowedRoles = [],
-  to,
+  redirectTo,
 }) => {
   const isAuth = true;
   // getPermisionByRoles(currentUser.roles , allowedRoles);
@@ -12,7 +12,7 @@ const ProtectedRoute = ({
       {(isProtectedByAuth && isAuth) || !(isProtectedByAuth || isAuth) ? (
         <Outlet />
       ) : (
-        <Navigate replace to={to} />
+        <Navigate replace to={redirectTo} />
       )}
     </>
   );

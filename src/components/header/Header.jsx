@@ -3,6 +3,7 @@ import Logo from "../logo/Logo";
 import { linkedInLogo } from "../../assets/images";
 import Search from "../search/Search";
 import NavLinks from "../navlinks/NavLinks";
+
 const Header = (props) => {
   return (
     <header className="px-6 fixed w-full top-0 z-[500] flex items-center bg-white shadow-sm">

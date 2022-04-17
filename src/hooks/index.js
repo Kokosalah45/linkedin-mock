@@ -1,3 +1,3 @@
 import useOutSideClick from "./useoutsideclick";
-import useGlobalClick from "./useglobalclick";
-export { useOutSideClick, useGlobalClick };
+import useToggle from "./usetoggle";
+export { useToggle, useOutSideClick };

@@ -3,7 +3,7 @@ import toggleReducer from "./reducers/toggle";
 
 const store = createStore(
   combineReducers({
-    globalClick: toggleReducer,
+    toggle: toggleReducer,
   })
 );
 
