@@ -22,7 +22,7 @@ const CustomNavLink = ({ imgSrcActive, imgSrcNotActive, alt, text, to }) => {
       <img className=" h-6 w-6" src={imgSrc} alt={alt} />
       <p className="capitalize">{text}</p>
       <span
-        className={`${border} duration-200 absolute rounded h-[2px] w-full bottom-0 transition-all ease-in-out bg-black `}
+        className={`${border} duration-200 absolute rounded h-[2px] w-full -bottom-px transition-all ease-in-out bg-black `}
       ></span>
     </Link>
   );

@@ -14,7 +14,6 @@ import {
   caseNotActive,
   bell,
   gridActive,
-  gridNotActive,
   user,
 } from "../../assets/images";
 
@@ -75,7 +74,11 @@ const NavLinks = ({ links }) => {
           />
         </li>
         <li>
-          <ExtraOptionsButton text="work" imgSrc={gridActive} />
+          <ExtraOptionsButton
+            handlerName="work-modal"
+            text="work"
+            imgSrc={gridActive}
+          />
         </li>
       </ul>
       <DropDown
