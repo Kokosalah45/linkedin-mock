@@ -1,10 +1,10 @@
 const initialState = {
   "me-dropdown": false,
   "work-modal": false,
+  "phone-size-dropdown": true,
+  "search-results": false,
 };
 const toggleReducer = (state = initialState, action) => {
-  console.log(state, "before");
-
   switch (action.type) {
     case "SET_VISIBLE":
       Object.keys(initialState).forEach((key) => (state[key] = false));

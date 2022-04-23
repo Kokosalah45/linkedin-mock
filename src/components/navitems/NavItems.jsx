@@ -17,20 +17,20 @@ import {
   user,
 } from "../../assets/images";
 
-const NavLinks = ({ links }) => {
+const NavItems = ({ items }) => {
   return (
-    <nav className="relative">
-      <ul className="flex gap-4">
-        <li>
+    <>
+      <ul className="flex gap-3 md:gap-4">
+        <li className="flex-shrink-0 ">
           <CustomNavLink
             text={"Home"}
-            alt={"feed"}
+            alt={"home"}
             imgSrcActive={homeActive}
             imgSrcNotActive={homeNotActive}
             to={"/feed"}
           />
         </li>
-        <li>
+        <li className="flex-shrink-0 ">
           <CustomNavLink
             text={"my network"}
             alt={"my network"}
@@ -39,7 +39,7 @@ const NavLinks = ({ links }) => {
             to={"/mynetwork"}
           />
         </li>
-        <li>
+        <li className="flex-shrink-0 ">
           <CustomNavLink
             text={"jobs"}
             alt={"jobs"}
@@ -48,7 +48,8 @@ const NavLinks = ({ links }) => {
             to={"/jobs"}
           />
         </li>
-        <li>
+
+        <li className="flex-shrink-0 ">
           <CustomNavLink
             text={"messaging"}
             alt={"messaging"}
@@ -57,7 +58,7 @@ const NavLinks = ({ links }) => {
             to={"/messaging"}
           />
         </li>
-        <li>
+        <li className="flex-shrink-0 ">
           <CustomNavLink
             text={"notifications"}
             alt={"notifications"}
@@ -66,14 +67,15 @@ const NavLinks = ({ links }) => {
             to={"/notifications"}
           />
         </li>
-        <li>
+
+        <li className="flex-shrink-0 ">
           <ExtraOptionsButton
             handlerName="me-dropdown"
             text="me"
             imgSrc={user}
           />
         </li>
-        <li>
+        <li className="flex-shrink-0 ">
           <ExtraOptionsButton
             handlerName="work-modal"
             text="work"
@@ -81,16 +83,10 @@ const NavLinks = ({ links }) => {
           />
         </li>
       </ul>
-      <DropDown
-        handlerName={"me-dropdown"}
-        className="absolute bg-white rounded-md shadow-sm  h-28 w-28 right-[60px] mt-2 p-5 flex items-center justify-center"
-      >
-        <div>koko</div>
-      </DropDown>
-    </nav>
+    </>
   );
 };
 
-NavLinks.propTypes = {};
+NavItems.propTypes = {};
 
-export default NavLinks;
+export default NavItems;

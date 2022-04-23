@@ -4,9 +4,12 @@ const useToggle = (handlerName) => {
   const handlerVal = useSelector((state) => state.toggle)[handlerName];
   const dispatch = useDispatch();
 
-  const handleToggle = (e) => {
+  const handleToggle = (e, forceAction = null) => {
     e.stopPropagation();
-    handlerVal
+
+    const action = forceAction || handlerVal;
+
+    action
       ? dispatch({ type: "SET_INVISIBLE", payload: handlerName })
       : dispatch({ type: "SET_VISIBLE", payload: handlerName });
   };

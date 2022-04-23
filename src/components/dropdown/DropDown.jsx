@@ -1,7 +1,14 @@
 import React from "react";
 import { useOutSideClick } from "../../hooks";
 import { useSelector } from "react-redux";
-const DropDown = ({ handlerName, children, ...field }) => {
+import Overlay from "../overlay/Overlay";
+const DropDown = ({
+  handlerName,
+  children,
+  isOverlay = false,
+  zIndex = 30,
+  ...field
+}) => {
   const handlerVal = useSelector((state) => state.toggle)[handlerName];
   const ref = useOutSideClick(handlerName);
 
@@ -12,6 +19,7 @@ const DropDown = ({ handlerName, children, ...field }) => {
           {children}
         </div>
       )}
+      {handlerVal && isOverlay && <Overlay zIndex={zIndex} />}
     </>
   );
 };

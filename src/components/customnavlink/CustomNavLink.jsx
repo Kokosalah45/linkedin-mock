@@ -16,13 +16,13 @@ const CustomNavLink = ({ imgSrcActive, imgSrcNotActive, alt, text, to }) => {
 
   return (
     <Link
-      className={`${opacity} group relative  gap-px  text-xs flex flex-col items-center p-2`}
+      className={`${opacity} group relative h-[57px] justify-center gap-px  text-xs flex flex-col items-center p-2`}
       to={to}
     >
       <img className=" h-6 w-6" src={imgSrc} alt={alt} />
-      <p className="capitalize">{text}</p>
+      <p className="capitalize hidden md:block ">{text}</p>
       <span
-        className={`${border} duration-200 absolute rounded h-[2px] w-full -bottom-px transition-all ease-in-out bg-black `}
+        className={`${border}  duration-200 absolute z-10 rounded h-[2px] w-full -bottom-px transition-all ease-in-out bg-black `}
       ></span>
     </Link>
   );
