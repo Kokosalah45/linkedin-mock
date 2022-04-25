@@ -1,10 +1,12 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { search } from "../../assets/images";
 
 import { useToggle } from "../../hooks";
 import DropDown from "../dropdown/DropDown";
 const Search = () => {
   //search-tab
+  const ref = useRef();
   const { handlerVal, handleToggle } = useToggle("search-results");
   const [isVisible, setIsVisible] = useState(window.innerWidth >= 1024);
   const toggleSearchTab = (e) => {
@@ -14,19 +16,26 @@ const Search = () => {
       setIsVisible(false);
     }
   };
+  const detectClickOutside = (e) => {
+    if (e.target && e.target !== ref.current && window.innerWidth < 1024) {
+      setIsVisible(false);
+    }
+  };
 
   useEffect(() => {
     window.addEventListener("resize", toggleSearchTab);
+    document.addEventListener("click", detectClickOutside);
 
     return () => {
       window.removeEventListener("resize", toggleSearchTab);
+      document.addEventListener("click", detectClickOutside);
     };
   }, []);
 
   return (
     <div className=" flex-grow-0 lg:flex-grow ">
       <div
-        className={`flex max-w-[280px] ${
+        className={`max-w-[280px] ${
           isVisible && handlerVal && "max-w-[350px]"
         } transition-all duration-300 relative bg-[#eef3f8] rounded-[4px] ${
           isVisible ? "block" : "hidden"
@@ -59,6 +68,16 @@ const Search = () => {
           <div>koko2</div>
         </DropDown>
       </div>
+      <button
+        ref={ref}
+        onClick={() => setIsVisible((prev) => !prev)}
+        className={`${
+          !isVisible ? "block" : "hidden"
+        } capitalize h-[57px] justify-center opacity-70 hover:opacity-100 group relative  gap-[2px] mx-2 sm:mx-4 text-xs flex flex-col items-center p-2`}
+      >
+        <img className="max-w-none h-6 w-6" src={search} alt={"search"} />
+        <p className="capitalize hidden md:block ">search</p>
+      </button>
     </div>
   );
 };

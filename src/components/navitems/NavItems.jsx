@@ -20,7 +20,7 @@ import {
 const NavItems = ({ items }) => {
   return (
     <>
-      <ul className="flex gap-3 md:gap-4">
+      <ul className="flex gap-3 sm:gap-6">
         <li className="flex-shrink-0 ">
           <CustomNavLink
             text={"Home"}

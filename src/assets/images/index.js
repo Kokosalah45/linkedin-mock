@@ -14,6 +14,7 @@ import down from "./down.png";
 import down2 from "./down2.png";
 import gridActive from "./gridactive.png";
 import gridNotActive from "./gridnotactive.png";
+import search from "./search.svg";
 export {
   linkedInLogo,
   userGroupActive,
@@ -31,4 +32,5 @@ export {
   down2,
   gridActive,
   gridNotActive,
+  search,
 };
