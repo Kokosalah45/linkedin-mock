@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-const useOutSideClick = (handlerName) => {
+const useOutSideClick = (handlerName, reducer) => {
   const dispatch = useDispatch();
   const ref = useRef(null);
 

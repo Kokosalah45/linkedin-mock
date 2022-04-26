@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const Modal = ({ children, handlerName, zIndex, ...props }) => {
   const ref = useOutSideClick(handlerName);
   const handlerVal = useSelector((state) => state.toggle)[handlerName];
-  const {handleToggle} = useToggle(handlerName)
+  const { handleToggle } = useToggle(handlerName);
   return createPortal(
     <AnimatePresence>
       {handlerVal && (
@@ -16,7 +16,7 @@ const Modal = ({ children, handlerName, zIndex, ...props }) => {
           {children(handleToggle)}
         </motion.div>
       )}
-      {handlerVal && <Overlay zIndex={zIndex}></Overlay>}
+      {handlerVal && <Overlay></Overlay>}
     </AnimatePresence>,
     document.getElementById("modal-outlet")
   );

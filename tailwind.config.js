@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       spacing: {
         navbargap: "calc(100vh - 58px)",
+        searchbarmobile: "calc(100vw - 82px)",
       },
       screens: {
         xs: "23.125rem",

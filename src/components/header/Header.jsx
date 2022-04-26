@@ -7,7 +7,7 @@ import DropDown from "../dropdown/DropDown";
 
 const Header = (props) => {
   return (
-    <header className="px-6 fixed w-full top-0 z-50  bg-white shadow-sm">
+    <header className="px-6 fixed w-full top-0 z-50 bg-white shadow-sm">
       <div className="flex items-center mx-auto lg:max-w-[1128px] ">
         <Logo imgSrc={linkedInLogo} alt={"linkedin-logo"} link={"linkedin"} />
         <Search />

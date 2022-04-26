@@ -4,7 +4,7 @@ const useToggle = (handlerName) => {
   const handlerVal = useSelector((state) => state.toggle)[handlerName];
   const dispatch = useDispatch();
 
-  const handleToggle = (e, forceAction = null) => {
+  const handleToggle = (e, reducer, forceAction = null) => {
     e.stopPropagation();
 
     const action = forceAction || handlerVal;
