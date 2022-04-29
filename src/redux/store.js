@@ -1,10 +1,10 @@
-import { createStore, combineReducers } from "redux";
-import toggleReducer from "./reducers/toggle";
+import { configureStore } from "@reduxjs/toolkit";
+import toggleSlice from "./slices/toggleSlice";
 
-const store = createStore(
-  combineReducers({
-    toggle: toggleReducer,
-  })
-);
+const store = configureStore({
+  reducer: {
+    toggle: toggleSlice,
+  },
+});
 
 export default store;

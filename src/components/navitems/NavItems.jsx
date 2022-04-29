@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import CustomNavLink from "../customnavlink/CustomNavLink";
 import ExtraOptionsButton from "../extraoptionsbutton/ExtraOptionsButton";
-import DropDown from "../dropdown/DropDown";
+
 import {
   userGroupNotActive,
   userGroupActive,
@@ -15,6 +15,7 @@ import {
   bell,
   gridActive,
   user,
+  options,
 } from "../../assets/images";
 
 const NavItems = ({ items }) => {
@@ -49,7 +50,7 @@ const NavItems = ({ items }) => {
           />
         </li>
 
-        <li className="flex-shrink-0 ">
+        <li className="flex-shrink-0 hidden xs:block">
           <CustomNavLink
             text={"messaging"}
             alt={"messaging"}
@@ -58,7 +59,7 @@ const NavItems = ({ items }) => {
             to={"/messaging"}
           />
         </li>
-        <li className="flex-shrink-0 ">
+        <li className="flex-shrink-0  hidden xs:block ">
           <CustomNavLink
             text={"notifications"}
             alt={"notifications"}
@@ -68,19 +69,22 @@ const NavItems = ({ items }) => {
           />
         </li>
 
-        <li className="flex-shrink-0 ">
+        <li className="flex-shrink-0 hidden sm:block ">
           <ExtraOptionsButton
             handlerName="me-dropdown"
             text="me"
             imgSrc={user}
           />
         </li>
-        <li className="flex-shrink-0 ">
+        <li className="flex-shrink-0 hidden sm:block ">
           <ExtraOptionsButton
             handlerName="work-modal"
             text="work"
             imgSrc={gridActive}
           />
+        </li>
+        <li className="flex-shrink-0  sm:hidden ">
+          <ExtraOptionsButton handlerName="options-dropdown" imgSrc={options} />
         </li>
       </ul>
     </>

@@ -1,5 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-
+import {
+  setVisible,
+  setInVisible,
+  closeAll,
+} from "../redux/slices/toggleSlice";
 const useToggle = (handlerName) => {
   const handlerVal = useSelector((state) => state.toggle)[handlerName];
   const dispatch = useDispatch();
@@ -8,10 +12,12 @@ const useToggle = (handlerName) => {
     e.stopPropagation();
 
     const action = forceAction || handlerVal;
-
-    action
-      ? dispatch({ type: "SET_INVISIBLE", payload: handlerName })
-      : dispatch({ type: "SET_VISIBLE", payload: handlerName });
+    if (action) {
+      dispatch(setInVisible(handlerName));
+    } else {
+      dispatch(closeAll());
+      dispatch(setVisible(handlerName));
+    }
   };
 
   return { handlerVal, handleToggle };

@@ -2,7 +2,7 @@ import React from "react";
 import { useOutSideClick } from "../../hooks";
 import { useSelector } from "react-redux";
 import Overlay from "../overlay/Overlay";
-import { AnimatePresence } from "framer-motion";
+
 const DropDown = ({
   handlerName,
   children,

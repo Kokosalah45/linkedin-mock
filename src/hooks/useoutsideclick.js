@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { setInVisible } from "../redux/slices/toggleSlice";
 
 const useOutSideClick = (handlerName, reducer) => {
   const dispatch = useDispatch();
@@ -7,7 +8,7 @@ const useOutSideClick = (handlerName, reducer) => {
 
   const handleClickOutside = (e) => {
     if (ref.current && !ref.current.contains(e.target)) {
-      dispatch({ type: "SET_INVISIBLE", payload: handlerName });
+      dispatch(setInVisible(handlerName));
     }
   };
 
